@@ -1,9 +1,13 @@
 * {
   padding: 0px;
   margin: none;
+  font-family: "Reddit Sans";
+  font-weight: 600;
 }
+
+
 :root {
-  --primary-blue: #3f235a;
+  --primary-blue: #4c2c6a;
   --background: #f6f6f6;
 }
 .nav-div {
@@ -11,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #e6e3ec;
-  height: 60px;
+  height: 70px;
   padding: 0px 40px;
 }
 .nav-div ul {
@@ -20,7 +24,7 @@
   justify-content: center;
   font-weight: 600;
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 .left {
   display: flex;
@@ -35,12 +39,12 @@
 .category-menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 5px;
-  width: 155px;
+  width: 158px;
   background-color: white;
   height: 45px;
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 0px 6px 0px 2px;
 }
 .category-menu span:nth-child(1) {
@@ -50,36 +54,69 @@
   text-align: center;
   border-radius: 50%;
   background-color: var(--primary-blue);
-  color: white;
+  color: rgb(169, 166, 17);
   align-content: center;
+  font-size: 30px;
+  padding-bottom: 5px;
 }
 .right {
   display: flex;
   gap: 25px;
 }
 .profile-icon {
+  position: relative;
   width: 45px;
   height: 45px;
   text-align: center;
   border-radius: 50%;
   background-color: white;
 }
+.profile-icon p {
+  background-color: white;
+  font-size: 0.8em;
+  color: rgba(100, 100, 111, 0.8);
+  width: 20px;
+  border: 1px solid rgba(100, 100, 111, 0.1);
+  /* box-shadow: rgba(100, 100, 111, 0.2) 1px 1px 1px 1px;  */
+  /* height: 20px; */
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
 .profile-icon span {
   font-size: 25px;
   color: rgb(13, 13, 50);
 }
 .cart-icon {
+  position: relative;
   width: 45px;
   height: 45px;
   text-align: center;
   align-content: center;
   border-radius: 50%;
   background-color: var(--primary-blue);
-  font-size: 20px;
-  font-weight: 800;
   color: rgb(150, 132, 30);
 }
-.price-icon span{
+.cart-icon span {
+  font-size: 20px;
+  font-weight: 800;
+}
+.cart-icon p {
+  background-color: white;
+  font-size: 0.8em;
+  color: rgba(100, 100, 111, 0.8);
+  width: 20px;
+  border: 1px solid rgba(100, 100, 111, 0.1);
+  /* box-shadow: rgba(100, 100, 111, 0.2) 1px 1px 1px 1px;  */
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+.price-icon span {
   font-weight: 600;
 }
 
@@ -92,7 +129,7 @@
   display: flex;
   padding: 15px 40px;
   background-color: var(--background);
-  width: 100%;
+  /* width: 100%; */
 }
 
 .sidebar {
@@ -100,7 +137,7 @@
   border-radius: 10px;
   font-size: 1.1rem;
 }
-.line{
+.line {
   margin: 0px 20px;
 }
 .sidebar ul {
@@ -110,41 +147,57 @@
   color: rgba(100, 100, 111, 0.7);
 }
 .sidebar ul li:nth-child(1) {
-  color: rgba(100, 100, 111, 1);
-  font-weight: 600;
+  color: rgb(71, 71, 85);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
-.reset-btn{
+
+.reset-btn {
   border: 1px solid #e4deea;
-  width:50%;
-  height:45px
+  width: 50%;
+  height: 45px;
 }
-.apply-btn{
+.apply-btn {
   background-color: var(--primary-blue);
   /* border: 1px solid #e4deea; */
-  width:50%;
-  height:45px
+  width: 50%;
+  height: 45px;
 }
 .main {
   width: 100%;
 }
-.filter-div{
+.filter-div {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 1.2rem;
   color: rgba(100, 100, 111, 0.2);
-
 }
-.filter-div span:nth-child(2){
+.filter-div span:nth-child(1),
+.filter-div span:nth-child(3) {
   color: black;
 }
-.filter-div select{
-  height: 40px;
-  border-color: rgba(100, 100, 111, 0.2);
-  background-color: #f9f8f8;
+.filter-div span:nth-child(6),
+.filter-div span:nth-child(7) {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+}
+.filter-div select {
+  height: 50px;
+  font-size: 0.9em;
+  color: rgba(125, 125, 153, 0.8);
+  border-color: rgba(201, 201, 215, 0.2);
+  background-color: #ffffff;
+  padding: 0px 15px;
+}
+.slider-div{
+  position: relative;
 }
 .first {
   padding: 20px 0px;
+}
+.first h2{
+  font-weight: 600;
 }
 .card-row {
   padding: 10px 0px;
@@ -152,10 +205,28 @@
 .cards {
   border-radius: 10px;
 }
+
+
 .card {
   position: relative;
-  border: none;
-  min-width: 220px;
+  border: 1px solid transparent;
+  min-width: 240px;
+  border-radius: 10px;
+}
+.card-title{
+  font-size: 1.06rem;
+}
+.card-text{
+ color: rgba(100, 100, 111, 0.8)
+}
+.star{
+  color:var(--primary-blue);
+}
+.card-body{
+  padding: 0 5px;
+}
+.card-body span:nth-child(2){
+  color: var(--primary-blue);
 }
 .card:hover {
   /* border: 1px solid #E6E3EC; */
@@ -163,6 +234,7 @@
 }
 .card-img {
   min-height: 290px;
+  border-radius: inherit;
 }
 .cart-button {
   font-weight: 700;
@@ -183,52 +255,56 @@
   position: absolute;
   top: 30px;
   left: 30px;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   text-align: center;
   border-radius: 50%;
   background-color: var(--primary-blue);
   color: white;
   align-content: center;
 }
-@media screen and (max-width: 600px) {
- .right{
-  display: none;
- }
- .left{
-  display: none;
- }
+@media screen and (max-width: 900px) {
+  .right {
+    display: none;
+  }
+  .left {
+    display: none;
+  }
 }
 
-.input{
+.input {
   width: 50%;
   text-align: center;
   height: 45px;
   border: 1px solid rgba(89, 73, 144, 0.2);
   border-radius: 5px;
 }
-.filter{
+.filter {
   padding: 30px 20px;
   list-style: none;
   line-height: 40px;
 }
-.filter h5{
+.filter h5 {
   padding-bottom: 20px;
+  font-weight: 600;
 }
-.input-div{
+.input-div {
   display: flex;
   gap: 15px;
 }
-.button-div{
+.button-div {
   display: flex;
   gap: 25px;
 }
+.button-div .reset-btn{
+  color: rgba(100, 100, 111, 0.8);
+}
 
-.admin{
+.admin {
   padding: 20px;
   width: 100vw;
 }
-.admin-page{
+.admin-page {
   height: 100vh;
   display: flex;
   justify-content: space-between;
@@ -236,10 +312,19 @@
   gap: 20px;
   /* align-items: center; */
 }
-.edit-button{
+.edit-button {
   cursor: pointer;
 }
-.form-div{
+.form-div {
   margin-right: 20px;
   min-width: 300px;
+  max-width: 300px;
 }
+.add-div{
+  max-width: 350px;
+}
+/* .admin-page th:nth-child(1),
+.admin-page th:nth-child(2),
+.admin-page th:nth-child(3){
+  width: 400px;
+} */
