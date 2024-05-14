@@ -98,15 +98,15 @@ export const AdminPage = () => {
         <h1>Admin Page</h1>
       </Row>
       <div className="admin-page">
-        <Row>
+        {/* <Row>
           <Col md={4}>
             <div>sidebar</div>
           </Col>
           <Col md={8}>
             <div>main</div>
           </Col>
-        </Row>
-        {/* <Row>
+        </Row> */}
+        <Row>
           <Col lg={9} md={9}>
             <Table striped bordered hover>
               <thead>
@@ -144,8 +144,8 @@ export const AdminPage = () => {
             </Table>
           </Col>
           <Col lg={3} md={3}></Col>
-        </Row> */}
-        {/* <div className="add-div">
+        </Row>
+        <div className="add-div">
           {!edit && (
             <Form>
               <h5>Add Products</h5>
@@ -271,7 +271,7 @@ export const AdminPage = () => {
               </Button>
             </Form>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
