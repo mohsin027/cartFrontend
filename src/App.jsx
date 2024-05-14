@@ -24,7 +24,7 @@ function App() {
                 element={
                   <>
                     <Navbar></Navbar>
-                    <Row className="section">
+                    <Row className="section w-100">
                       <Col sm={12} md={3}>
                         <Sidebar />
                       </Col>
