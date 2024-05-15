@@ -3,8 +3,8 @@ import { Button } from "react-bootstrap";
 import MultiRangeSlider from "./MultiRangeSlider/MultiRangeSlider";
 
 export const Sidebar = () => {
-  const [min,setMin]=useState(399)
-  const [max,setMax]=useState(11100)
+  const [min, setMin] = useState(399);
+  const [max, setMax] = useState(11100);
   return (
     <div className="sidebar">
       <ul>
@@ -19,17 +19,19 @@ export const Sidebar = () => {
       <div className="filter">
         <h5>Filter by Price</h5>
         <div className="input-div">
-          <input type="number" placeholder={min} className="input" disabled/>
-          <input type="number" placeholder={max} className="input" disabled/>
+          <input type="number" placeholder={min} className="input" disabled />
+          <input type="number" placeholder={max} className="input" disabled />
         </div>
         <div className="slider-div">
-        
-
           <MultiRangeSlider
-      min={0} setMin={setMin} setMax={setMax}
-      max={11000}
-      onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
-    />
+            min={0}
+            setMin={setMin}
+            setMax={setMax}
+            max={11000}
+            onChange={({ min, max }) =>
+              console.log(`min = ${min}, max = ${max}`)
+            }
+          />
         </div>
         <div className="button-div">
           <Button className="reset-btn" variant="outline-dark">

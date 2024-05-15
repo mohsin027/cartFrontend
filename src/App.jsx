@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
-import { Navbar } from "./components/Navbar";
+import { NavBar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { Main } from "./components/Main";
 import { Col, Row } from "react-bootstrap";
@@ -23,7 +23,7 @@ function App() {
                 path="/*"
                 element={
                   <>
-                    <Navbar></Navbar>
+                    <NavBar></NavBar>
                     <Row className="section w-100">
                       <Col sm={12} md={3}>
                         <Sidebar />

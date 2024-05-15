@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useDispatch } from "react-redux";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { SERVER_URL } from "../constants/constants";
+import { Spinner } from "react-bootstrap";
 
 function ProductCard({ product, cart, setCart }) {
+  const [isLoading, setIsLoading] = useState(false)
   const star = () => {
     let arr = [];
 
@@ -27,6 +29,7 @@ function ProductCard({ product, cart, setCart }) {
     star();
   }, []);
   async function addToCart(e) {
+    setIsLoading(true);
     e.preventDefault();
     try {
       const response = await axios.post(
@@ -35,6 +38,7 @@ function ProductCard({ product, cart, setCart }) {
       );
       console.log(response);
       dispatch({ type: "REFRESH-CART" });
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -74,8 +78,15 @@ function ProductCard({ product, cart, setCart }) {
 
         <Card.Text className="card-body">
           <span className='me-2'><strike>₹1099.00</strike></span><span>₹{product.price.toFixed(2)}</span></Card.Text>
-        <Button className="cart-button" variant="primary" onClick={addToCart}>
-          Add To Cart
+        <Button className="cart-button" onClick={addToCart} disabled={isLoading} >
+          {isLoading?
+          <span className="d-flex align-items-center justify-content-center gap-2  ">
+           <Spinner animation="border" role="status">
+           <span className="visually-hidden">Loading...</span>
+         </Spinner>
+          Adding...
+          </span>
+          :"Add To Cart"}
         </Button>
       </Card.Body>
     </Card>

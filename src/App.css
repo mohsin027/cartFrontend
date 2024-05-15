@@ -1,10 +1,10 @@
 * {
-  padding: 0px;
-  margin: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font-family: "Reddit Sans";
   font-weight: 600;
 }
-
 
 :root {
   --primary-blue: #4c2c6a;
@@ -19,12 +19,42 @@
   padding: 0px 40px;
 }
 .nav-div ul {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   display: flex;
   gap: 25px;
+}
+.responsive-nav {
+  /* display: none; */
+  position: absolute;
+  left: -200px;
+  width: 200px;
+  background-color: rgba(43, 43, 70, 0.9);
+  height: 100vh;
+  z-index: 100;
+  text-align: left;
+  color: white;
+}
+.responsive-menu {
+  display: none;
+  justify-content: end;
+  position: absolute;
+  right: 20px;
+}
+.nav-active {
+  left: 0;
+  transition: 0.5s linear;
+}
+.r-nav {
+  font-size: 1.2rem;
+}
+.r-nav li {
+  height: 40px;
+  font-weight: 700;
+  list-style: none;
 }
 .left {
   display: flex;
@@ -35,6 +65,9 @@
 }
 .nav-div li {
   list-style-type: none;
+}
+.menu-btn{
+  font-size: 2rem;
 }
 .category-menu {
   display: flex;
@@ -124,6 +157,20 @@
   display: grid;
   align-items: center;
 }
+@media screen and (max-width: 900px) {
+  .right {
+    display: none;
+  }
+  .left {
+    display: none;
+  }
+  /* .responsive-nav{
+  left: -200px;
+ } */
+  .responsive-menu {
+    display: block;
+  }
+}
 
 .section {
   display: flex;
@@ -169,6 +216,7 @@
 .filter-div {
   display: flex;
   align-items: center;
+  justify-content: end;
   gap: 10px;
   font-size: 1.2rem;
   color: rgba(100, 100, 111, 0.2);
@@ -182,7 +230,14 @@
   font-size: 1.8em;
   margin-bottom: 8px;
 }
-.filter-div select {
+.filter-by {
+  text-align: right;
+}
+.filter-select {
+  width: auto;
+  text-align: right;
+}
+.select {
   height: 50px;
   font-size: 0.9em;
   color: rgba(125, 125, 153, 0.8);
@@ -190,22 +245,34 @@
   background-color: #ffffff;
   padding: 0px 15px;
 }
-.slider-div{
+option {
+  font-size: 0.8rem;
+  background-color: white;
+  color: black;
+}
+.slider-div {
   position: relative;
 }
 .first {
   padding: 20px 0px;
+  align-items: center;
 }
-.first h2{
+@media screen and (max-width: 768px) {
+  .filter-div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.first h2 {
   font-weight: 600;
 }
 .card-row {
   padding: 10px 0px;
+  min-height: 500px;
 }
 .cards {
   border-radius: 10px;
 }
-
 
 .card {
   position: relative;
@@ -213,19 +280,19 @@
   min-width: 240px;
   border-radius: 10px;
 }
-.card-title{
+.card-title {
   font-size: 1.06rem;
 }
-.card-text{
- color: rgba(100, 100, 111, 0.8)
+.card-text {
+  color: rgba(100, 100, 111, 0.8);
 }
-.star{
-  color:var(--primary-blue);
+.star {
+  color: var(--primary-blue);
 }
-.card-body{
+.card-body {
   padding: 0 5px;
 }
-.card-body span:nth-child(2){
+.card-body span:nth-child(2) {
   color: var(--primary-blue);
 }
 .card:hover {
@@ -250,6 +317,10 @@
   color: rgb(150, 132, 30);
   background-color: var(--primary-blue);
 }
+.cart-button:not(:disabled):not(:disabled):active,
+.cart-button:disabled {
+  background-color: var(--primary-blue);
+}
 
 .offer-circle {
   position: absolute;
@@ -262,14 +333,6 @@
   background-color: var(--primary-blue);
   color: white;
   align-content: center;
-}
-@media screen and (max-width: 900px) {
-  .right {
-    display: none;
-  }
-  .left {
-    display: none;
-  }
 }
 
 .input {
@@ -296,7 +359,7 @@
   display: flex;
   gap: 25px;
 }
-.button-div .reset-btn{
+.button-div .reset-btn {
   color: rgba(100, 100, 111, 0.8);
 }
 
@@ -320,7 +383,7 @@
   min-width: 300px;
   max-width: 300px;
 }
-.add-div{
+.add-div {
   max-width: 350px;
 }
 /* .admin-page th:nth-child(1),
